@@ -724,7 +724,7 @@ export function evaluateVersions(
   })
   for (let i = versions.length - 1; i >= 0; i--) {
     const potential: string = versions[i]
-    const satisfied: boolean = semver.satisfies(potential, versionSpec)
+    const satisfied: boolean = semver.satisfies(potential, versionSpec, { includePrerelease: true })
     if (satisfied) {
       version = potential
       break
