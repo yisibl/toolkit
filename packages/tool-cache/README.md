@@ -1,7 +1,8 @@
-# `@actions/tool-cache`
+# `tool-cache-mirror`
 
 > Functions necessary for downloading and caching tools.
 
+Support download RC version
 ## Usage
 
 #### Download

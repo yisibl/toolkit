@@ -76,7 +76,7 @@ export async function _findMatch(
 
     debug(`check ${version} satisfies ${versionSpec}`)
     if (
-      semver.satisfies(version, versionSpec) &&
+      semver.satisfies(version, versionSpec, { includePrerelease: true }) &&
       (!stable || candidate.stable === stable)
     ) {
       file = candidate.files.find(item => {
@@ -91,7 +91,7 @@ export async function _findMatch(
           if (osVersion === item.platform_version) {
             chk = true
           } else {
-            chk = semver.satisfies(osVersion, item.platform_version)
+            chk = semver.satisfies(osVersion, item.platform_version, { includePrerelease: true })
           }
         }
 
